@@ -20,6 +20,7 @@ import {
   Building2,
   Accessibility,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import {
   PieChart,
   Pie,
@@ -167,8 +168,14 @@ const RHAdmin = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="gradient-header text-primary-foreground py-8 px-4">
-        <div className="max-w-7xl mx-auto">
+      <header className="gradient-header text-primary-foreground py-8 px-4 relative">
+        <Link
+          to="/"
+          className="absolute top-4 left-4 flex items-center gap-2 bg-primary-foreground/10 hover:bg-primary-foreground/20 text-primary-foreground px-4 py-2 rounded-lg transition-colors text-sm font-medium"
+        >
+          ← Voltar
+        </Link>
+        <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-2xl md:text-3xl font-bold">
             Painel RH – Inscritos no Treinamento
           </h1>
