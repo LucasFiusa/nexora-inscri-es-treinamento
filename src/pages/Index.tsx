@@ -17,7 +17,8 @@ import {
 } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { CheckCircle, Calendar, MapPin, Clock } from "lucide-react";
+import { CheckCircle, Calendar, MapPin, Clock, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const formSchema = z.object({
   nome_completo: z.string().min(1, "Nome completo é obrigatório").max(100),
@@ -110,7 +111,14 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="gradient-header text-primary-foreground py-12 px-4">
+      <header className="gradient-header text-primary-foreground py-12 px-4 relative">
+        <Link
+          to="/rh"
+          className="absolute top-4 right-4 flex items-center gap-2 bg-primary-foreground/10 hover:bg-primary-foreground/20 text-primary-foreground px-4 py-2 rounded-lg transition-colors text-sm font-medium"
+        >
+          <Users className="w-4 h-4" />
+          Área do RH
+        </Link>
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
             Inscrição Interna – Treinamento Dominando a Automação e
